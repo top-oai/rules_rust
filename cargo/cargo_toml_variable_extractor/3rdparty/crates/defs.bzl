@@ -413,6 +413,12 @@ def crate_repositories():
     maybe(
         http_archive,
         name = "rules_rust_ctve__autocfg-1.4.0",
+        patch_args = [
+            "-p1",
+        ],
+        patches = [
+            "@rules_rust//cargo/cargo_toml_variable_extractor/3rdparty:autocfg_make_deterministic.patch",
+        ],
         sha256 = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26",
         type = "tar.gz",
         urls = ["https://static.crates.io/crates/autocfg/1.4.0/download"],

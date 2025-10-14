@@ -1,0 +1,13 @@
+diff --git a/src/lib.rs b/src/lib.rs
+index fc3c59b..abb3442 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -203,7 +203,7 @@ impl AutoCfg {
+             rustc_version: rustc_version,
+             target: target,
+             no_std: false,
+-            uuid: new_uuid(),
++            uuid: 0,
+         };
+
+         // Sanity check with and without `std`.

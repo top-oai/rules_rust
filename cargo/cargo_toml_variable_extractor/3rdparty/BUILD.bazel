@@ -13,4 +13,14 @@ crates_vendor(
     render_config = render_config(generate_cargo_toml_env_vars = False),
     repository_name = "rules_rust_ctve",
     tags = ["manual"],
+    annotations = {
+        "autocfg": [
+            crate.annotation(
+                patches = [
+                    "@rules_rust//cargo/cargo_toml_variable_extractor/3rdparty:autocfg_make_deterministic.patch",
+                ],
+                patch_args = ["-p1"],
+            ),
+        ],
+    },
 )
